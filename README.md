@@ -23,7 +23,7 @@ The navigation is implemented using Jetpack Compose and the Android Navigation c
 
 The Main Menu screen features styled buttons, each representing a continent. The buttons are designed with a rounded corner shape, a distinct color palette, and a clear text label. The background of the Main Menu utilizes captivating images of each continent.
 
-![Main Menu](screenshots/main_menu.png)
+![Main Menu](screenshots/main_menu.jpeg)
 
 ### Continent Screens
 
