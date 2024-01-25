@@ -29,6 +29,8 @@ The Main Menu screen features styled buttons, each representing a continent. The
 
 Each continent screen presents information about the selected region. The content is displayed in a readable and aesthetically pleasing manner. The screens include a prominent title, styled text describing the continent, and a 'Back' button for easy navigation to the Main Menu.
 
+![Continent Screens](screenshots/back_button.jpeg)
+
 ## Visual Elements
 
 - **Styled Buttons**: The buttons on the Main Menu screen are styled with a unique color scheme and shape. They efficiently handle navigation to specific continent screens upon selection.
