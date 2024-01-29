@@ -51,8 +51,8 @@ To run the Continents Guide App, clone the repository and open the project in An
 
 ## Contributors
 
-- Nikita Smiichyk
+- Nikita Smiichyk (@smiichyk)
 
 ## License
 
-See the LICENSE.md file for details.
+See the [MIT License](LICENSE) file for details.
