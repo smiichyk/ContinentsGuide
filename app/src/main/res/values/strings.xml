@@ -5,6 +5,69 @@
     <string name="africa">AFRICA</string>
     <string name="north_and_south_america">NORTH AND SOUTH AMERICA</string>
     <string name="oceania_and_more_exotic_countries">OCEANIA AND MORE EXOTIC COUNTRIES</string>
+
     <string name="back">BACK</string>
-    <string name="enter_country_name">Enter country name</string>
+    <string name="quiz">QUIZ</string>
+    <string name="submit">SUBMIT</string>
+
+    <string name="europe_text">Europe is a continent in the Western Hemisphere, bordered by the Atlantic Ocean to the west, the Arctic Ocean to the north, and the Black, Caspian, and Mediterranean Seas to the south. It consists of 44 countries and boasts diverse climates, cultures, and histories. The European Union is a significant political and economic force, uniting 27 countries. Europe is a center of global history, art, science, and economics. Capitals such as Paris, Berlin, London, Rome, and Madrid are cultural and economic hubs of the world.</string>
+    <string name="asia_text">Asia, the largest continent, spans the Eastern Hemisphere, bordered by the Pacific Ocean to the east, the Indian Ocean to the south, and the Arctic Ocean to the north. It encompasses diverse landscapes, from the vast deserts of the Middle East to the lush rain forests of Southeast Asia. With 49 countries, Asia boasts a rich tapestry of cultures, languages, and traditions. The continent is a hub of economic activity, with dynamic industries driving global commerce. Organizations like the Association of Southeast Asian Nations (ASEAN) foster regional cooperation. Major cities such as Tokyo, Beijing, Delhi, and Istanbul are vibrant centers of innovation and culture.</string>
+    <string name="africa_text">Africa is a continent located primarily in the Eastern Hemisphere, bounded by the Atlantic Ocean to the west, the Indian Ocean to the east, and the Mediterranean Sea to the north. It comprises 54 countries and exhibits a rich diversity of cultures, landscapes, and histories. Africa\'s natural beauty encompasses deserts, savannas, forests, and mountains. Despite challenges, it holds immense potential for growth and development. The African Union serves as a pivotal organization for continental cooperation and integration. Major cities such as Cairo, Lagos, Johannesburg, Nairobi, and Addis Ababa are important centers for culture, commerce, and innovation on the continent.</string>
+    <string name="america_text">America, comprising North and South America, is a vast continent located primarily in the Western Hemisphere, bordered by the Pacific Ocean to the west, the Atlantic Ocean to the east, and the Arctic Ocean to the north. It showcases a remarkable diversity of landscapes, including mountains, forests, deserts, and tropical rainforests. With 35 countries, America is a melting pot of cultures, languages, and traditions. The continent boasts significant economic powerhouses and technological innovation.</string>
+    <string name="oceania_text">Oceania is a geographical region consisting of thousands of islands located in the central and southern parts of the Pacific Ocean. It includes island groups such as Australia, New Zealand, Hawaii, and the islands of Polynesia, Micronesia, and Melanesia. Oceania is characterized by rich biodiversity, including tropical forests, coral reefs, and unique animal species. The diversity of cultures and languages reflects the multitude of ethnic groups inhabiting these islands. The region holds strategic importance for international trade and cooperation and is home to many indigenous peoples who continue to preserve their traditions and customs.</string>
+
+    <string name="europe_question01">Which country is most famous for its fjords?</string>
+    <string name="europe_question01_">Norway</string>
+    <string name="europe_question02">Which capital city is known as the "City of All Times"?</string>
+    <string name="europe_question02_">Rome</string>
+    <string name="europe_question03">Which country is the birthplace of pizza?</string>
+    <string name="europe_question03_">Italy</string>
+    <string name="europe_question04">Which lake is the largest in Europe?</string>
+    <string name="europe_question04_">Ladoga</string>
+    <string name="europe_question05">Which country is the birthplace of ancient democracy?</string>
+    <string name="europe_question05_">Greece</string>
+
+    <string name="asia_question01">question01</string>
+    <string name="asia_question01_">text</string>
+    <string name="asia_question02">question02</string>
+    <string name="asia_question02_">text</string>
+    <string name="asia_question03">question03</string>
+    <string name="asia_question03_">text</string>
+    <string name="asia_question04">question04</string>
+    <string name="asia_question04_">text</string>
+    <string name="asia_question05">question05</string>
+    <string name="asia_question05_">text</string>
+
+    <string name="africa_question01">question01</string>
+    <string name="africa_question01_">text</string>
+    <string name="africa_question02">question02</string>
+    <string name="africa_question02_">text</string>
+    <string name="africa_question03">question03</string>
+    <string name="africa_question03_">text</string>
+    <string name="africa_question04">question04</string>
+    <string name="africa_question04_">text</string>
+    <string name="africa_question05">question05</string>
+    <string name="africa_question05_">text</string>
+
+    <string name="america_question01">question01</string>
+    <string name="america_question01_">text</string>
+    <string name="america_question02">question02</string>
+    <string name="america_question02_">text</string>
+    <string name="america_question03">question03</string>
+    <string name="america_question03_">text</string>
+    <string name="america_question04">question04</string>
+    <string name="america_question04_">text</string>
+    <string name="america_question05">question05</string>
+    <string name="america_question05_">text</string>
+
+    <string name="oceania_question01">question01</string>
+    <string name="oceania_question01_">text</string>
+    <string name="oceania_question02">question02</string>
+    <string name="oceania_question02_">text</string>
+    <string name="oceania_question03">question03</string>
+    <string name="oceania_question03_">text</string>
+    <string name="oceania_question04">question04</string>
+    <string name="oceania_question04_">text</string>
+    <string name="oceania_question05">question05</string>
+    <string name="oceania_question05_">text</string>
 </resources>

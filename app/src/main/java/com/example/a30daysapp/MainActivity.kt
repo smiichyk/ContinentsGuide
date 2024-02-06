@@ -1,23 +1,31 @@
 package com.example.a30daysapp
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.a30daysapp.ui.theme.ContinentsGuide
+import com.example.a30daysapp.quizes.AfricaQuiz
+import com.example.a30daysapp.quizes.AmericaQuiz
+import com.example.a30daysapp.quizes.AsiaQuiz
+import com.example.a30daysapp.quizes.EuropeQuiz
+import com.example.a30daysapp.quizes.OceaniaQuiz
+import com.example.a30daysapp.screens.AfricaScreen
+import com.example.a30daysapp.screens.AmericaScreen
+import com.example.a30daysapp.screens.AsiaScreen
+import com.example.a30daysapp.screens.EuropeScreen
+import com.example.a30daysapp.screens.OceaniaScreen
 import com.example.a30daysapp.screens.ShowMainButtons
-import com.example.a30daysapp.screens.ShowEurope
-import com.example.a30daysapp.screens.ShowAsia
-import com.example.a30daysapp.screens.ShowAfrica
-import com.example.a30daysapp.screens.ShowAmerica
-import com.example.a30daysapp.screens.ShowOceania
+import com.example.a30daysapp.ui.theme.ContinentsGuide
 
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -28,19 +36,34 @@ class MainActivity : ComponentActivity() {
                         ShowMainButtons(navController)
                     }
                     composable(Screen.Europe.route) {
-                        ShowEurope(navController)
+                        EuropeScreen(navController)
+                    }
+                    composable(Screen.EuropeQuiz.route) {
+                        EuropeQuiz(navController)
                     }
                     composable(Screen.Asia.route) {
-                        ShowAsia(navController)
+                        AsiaScreen(navController)
+                    }
+                    composable(Screen.AsiaQuiz.route) {
+                        AsiaQuiz()
                     }
                     composable(Screen.Africa.route) {
-                        ShowAfrica(navController)
+                        AfricaScreen(navController)
+                    }
+                    composable(Screen.AfricaQuiz.route) {
+                        AfricaQuiz()
                     }
                     composable(Screen.America.route) {
-                        ShowAmerica(navController)
+                        AmericaScreen(navController)
+                    }
+                    composable(Screen.AmericaQuiz.route) {
+                        AmericaQuiz()
                     }
                     composable(Screen.Oceania.route) {
-                        ShowOceania(navController)
+                        OceaniaScreen(navController)
+                    }
+                    composable(Screen.OceaniaQuiz.route) {
+                        OceaniaQuiz()
                     }
                 }
             }
@@ -51,10 +74,15 @@ class MainActivity : ComponentActivity() {
 sealed class Screen(val route: String) {
     object MainMenu : Screen("main_screen")
     object Europe : Screen("europe")
+    object EuropeQuiz : Screen("europe_quiz")
     object Asia : Screen("asia")
+    object AsiaQuiz : Screen("asia_quiz")
     object Africa : Screen("africa")
+    object AfricaQuiz : Screen("africa_quiz")
     object America : Screen("america")
+    object AmericaQuiz : Screen("america_quiz")
     object Oceania : Screen("oceania")
+    object OceaniaQuiz : Screen("oceania_quiz")
 }
 
 @Preview(showBackground = true)
