@@ -17,6 +17,13 @@ fun EuropeQuiz(navController: NavController) {
             R.string.question_13,
             R.string.question_14,
             R.string.question_15
+        ),
+        listOf(
+            R.string.answer_11,
+            R.string.answer_12,
+            R.string.answer_13,
+            R.string.answer_14,
+            R.string.answer_15
         )
     )
 }
@@ -32,6 +39,13 @@ fun AsiaQuiz(navController: NavController) {
             R.string.question_23,
             R.string.question_24,
             R.string.question_25
+        ),
+        listOf(
+            R.string.answer_21,
+            R.string.answer_22,
+            R.string.answer_23,
+            R.string.answer_24,
+            R.string.answer_25
         )
     )
 }
@@ -47,6 +61,13 @@ fun AfricaQuiz(navController: NavController) {
             R.string.question_33,
             R.string.question_34,
             R.string.question_35
+        ),
+        listOf(
+            R.string.answer_31,
+            R.string.answer_32,
+            R.string.answer_33,
+            R.string.answer_34,
+            R.string.answer_35
         )
     )
 }
@@ -62,6 +83,13 @@ fun AmericaQuiz(navController: NavController) {
             R.string.question_43,
             R.string.question_44,
             R.string.question_45
+        ),
+        listOf(
+            R.string.answer_41,
+            R.string.answer_42,
+            R.string.answer_43,
+            R.string.answer_44,
+            R.string.answer_45
         )
     )
 }
@@ -77,6 +105,13 @@ fun OceaniaQuiz(navController: NavController) {
             R.string.question_53,
             R.string.question_54,
             R.string.question_55
+        ),
+        listOf(
+            R.string.answer_51,
+            R.string.answer_52,
+            R.string.answer_53,
+            R.string.answer_54,
+            R.string.answer_55
         )
     )
 }

@@ -85,23 +85,10 @@ fun ShowContinent(navController: NavController, imageInt: Int, textId: Int, scre
 fun ContinentQuiz(
     navController: NavController,
     screen: Screen,
-    questions: List<Int>
+    questions: List<Int>,
+    answerResources: List<Int>
 ) {
     val context = LocalContext.current
-    val correctAnswers = remember { mutableStateMapOf<Int, String>() }
-
-    for (questionId in questions) {
-        val answerKey = "answer_$questionId"
-        val answerId = context.resources.getIdentifier(answerKey, "string", context.packageName)
-
-        if (answerId != 0) {
-            val answer = context.getString(answerId)
-            correctAnswers[questionId] = answer
-        } else {
-            println("Error: $answerKey")
-        }
-    }
-
     val userAnswers = remember { mutableStateMapOf<Int, String>() }
 
     Column(
@@ -114,11 +101,11 @@ fun ContinentQuiz(
         )
 
         // Questions and fields for entering answers
-        questions.forEach { questionId ->
+        questions.forEachIndexed { index, questionId ->
             val question = stringResource(id = questionId)
             AnswerInput(
                 question = question,
-                onAnswerChanged = { answer -> userAnswers[questionId] = answer }
+                onAnswerChanged = { answer -> userAnswers[index] = answer }
             )
         }
 
@@ -133,8 +120,8 @@ fun ContinentQuiz(
                 onClick = {
                     var correctCount = 0
 
-                    for ((questionId, userAnswer) in userAnswers) {
-                        val correctAnswer = correctAnswers[questionId]
+                    for ((index, userAnswer) in userAnswers) {
+                        val correctAnswer = context.getString(answerResources[index])
                         if (correctAnswer.equals(userAnswer, ignoreCase = true)) {
                             correctCount++
                         }
