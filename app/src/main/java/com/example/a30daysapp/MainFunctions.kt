@@ -1,5 +1,6 @@
 package com.example.a30daysapp
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,13 +20,14 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -51,7 +53,7 @@ fun StyledButton(textId: Int, destination: Screen, navController: NavController)
 }
 
 @Composable
-fun ShowContinent(navController: NavController, imageInt: Int, textId: Int, continentQuiz: Screen) {
+fun ShowContinent(navController: NavController, imageInt: Int, textId: Int, screen: Screen) {
     Column(
         modifier = Modifier
             .background(Color(225, 200, 150))
@@ -72,15 +74,35 @@ fun ShowContinent(navController: NavController, imageInt: Int, textId: Int, cont
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxSize()
         ) {
-            StyledButton(R.string.quiz, continentQuiz, navController)
+            StyledButton(R.string.quiz, screen, navController)
             StyledButton(R.string.back, Screen.MainMenu, navController)
         }
     }
 }
 
+@SuppressLint("DiscouragedApi")
 @Composable
-fun ContinentQuiz(navController: NavController) {
-    val answers = remember { mutableStateListOf<String>() }
+fun ContinentQuiz(
+    navController: NavController,
+    screen: Screen,
+    questions: List<Int>
+) {
+    val context = LocalContext.current
+    val correctAnswers = remember { mutableStateMapOf<Int, String>() }
+
+    for (questionId in questions) {
+        val answerKey = "answer_$questionId"
+        val answerId = context.resources.getIdentifier(answerKey, "string", context.packageName)
+
+        if (answerId != 0) {
+            val answer = context.getString(answerId)
+            correctAnswers[questionId] = answer
+        } else {
+            println("Error: $answerKey")
+        }
+    }
+
+    val userAnswers = remember { mutableStateMapOf<Int, String>() }
 
     Column(
         modifier = Modifier.padding(30.dp)
@@ -91,25 +113,13 @@ fun ContinentQuiz(navController: NavController) {
             modifier = Modifier.padding(vertical = 16.dp)
         )
 
-        // Answer Inputs
-        AnswerInput(R.string.europe_question01) { answer ->
-            answers[0] = answer
-        }
-
-        AnswerInput(R.string.europe_question02) { answer ->
-            answers[1] = answer
-        }
-
-        AnswerInput(R.string.europe_question03) { answer ->
-            answers[2] = answer
-        }
-
-        AnswerInput(R.string.europe_question04) { answer ->
-            answers[3] = answer
-        }
-
-        AnswerInput(R.string.europe_question05) { answer ->
-            answers[4] = answer
+        // Questions and fields for entering answers
+        questions.forEach { questionId ->
+            val question = stringResource(id = questionId)
+            AnswerInput(
+                question = question,
+                onAnswerChanged = { answer -> userAnswers[questionId] = answer }
+            )
         }
 
         // Submit
@@ -117,32 +127,41 @@ fun ContinentQuiz(navController: NavController) {
         Row(
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxWidth()
         ) {
             Button(
                 onClick = {
-                    answers.forEachIndexed { index, answer ->
-                        println("Question ${index + 1} Answer: $answer")
+                    var correctCount = 0
+
+                    for ((questionId, userAnswer) in userAnswers) {
+                        val correctAnswer = correctAnswers[questionId]
+                        if (correctAnswer.equals(userAnswer, ignoreCase = true)) {
+                            correctCount++
+                        }
                     }
+
+                    navController.navigate(
+                        "${Screen.Result.route}/${correctCount}"
+                    )
                 }
             ) {
-                Text(text = stringResource(id = R.string.submit))
+                Text(stringResource(R.string.submit))
             }
 
-            StyledButton(R.string.back, Screen.Europe, navController)
+            StyledButton(R.string.back, screen, navController)
         }
     }
 }
 
 @Composable
-fun AnswerInput(questionResId: Int, onAnswerChanged: (String) -> Unit) {
+fun AnswerInput(question: String, onAnswerChanged: (String) -> Unit) {
     var answer by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier.padding(vertical = 8.dp)
     ) {
         Text(
-            text = stringResource(questionResId),
+            text = question,
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.padding(bottom = 8.dp)
         )
@@ -152,5 +171,21 @@ fun AnswerInput(questionResId: Int, onAnswerChanged: (String) -> Unit) {
             label = { Text("Your Answer") },
             modifier = Modifier.fillMaxWidth()
         )
+    }
+}
+
+@Composable
+fun ResultScreen(
+    navController: NavController,
+    correctCount: Int
+) {
+    Column(
+        Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("${Screen.Result.route} $correctCount/5")
+        Spacer(modifier = Modifier.height(32.dp))
+        StyledButton(R.string.main_menu, Screen.MainMenu, navController)
     }
 }

@@ -23,7 +23,6 @@ import com.example.a30daysapp.screens.OceaniaScreen
 import com.example.a30daysapp.screens.ShowMainButtons
 import com.example.a30daysapp.ui.theme.ContinentsGuide
 
-
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,25 +44,31 @@ class MainActivity : ComponentActivity() {
                         AsiaScreen(navController)
                     }
                     composable(Screen.AsiaQuiz.route) {
-                        AsiaQuiz()
+                        AsiaQuiz(navController)
                     }
                     composable(Screen.Africa.route) {
                         AfricaScreen(navController)
                     }
                     composable(Screen.AfricaQuiz.route) {
-                        AfricaQuiz()
+                        AfricaQuiz(navController)
                     }
                     composable(Screen.America.route) {
                         AmericaScreen(navController)
                     }
                     composable(Screen.AmericaQuiz.route) {
-                        AmericaQuiz()
+                        AmericaQuiz(navController)
                     }
                     composable(Screen.Oceania.route) {
                         OceaniaScreen(navController)
                     }
                     composable(Screen.OceaniaQuiz.route) {
-                        OceaniaQuiz()
+                        OceaniaQuiz(navController)
+                    }
+                    composable("${Screen.Result.route}/{correctCount}") {
+                            navBackStackEntry ->
+                        val count = navBackStackEntry
+                            .arguments?.getString("correctCount")?.toIntOrNull() ?: 0
+                        ResultScreen(navController, count)
                     }
                 }
             }
@@ -83,6 +88,7 @@ sealed class Screen(val route: String) {
     object AmericaQuiz : Screen("america_quiz")
     object Oceania : Screen("oceania")
     object OceaniaQuiz : Screen("oceania_quiz")
+    object Result : Screen("Your result is")
 }
 
 @Preview(showBackground = true)
