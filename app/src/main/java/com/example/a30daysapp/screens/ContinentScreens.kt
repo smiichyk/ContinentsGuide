@@ -1,10 +1,13 @@
 package com.example.a30daysapp.screens
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.a30daysapp.R
 import com.example.a30daysapp.Screen
 import com.example.a30daysapp.ShowContinent
+import com.example.a30daysapp.ui.theme.ContinentsGuide
 
 @Composable
 fun EuropeScreen(navController: NavController) {
@@ -54,4 +57,44 @@ fun OceaniaScreen(navController: NavController) {
         textId = R.string.oceania_text,
         screen = Screen.OceaniaQuiz
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun EuropePreview() {
+    ContinentsGuide {
+        EuropeScreen(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AsiaPreview() {
+    ContinentsGuide {
+        AsiaScreen(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AfricaPreview() {
+    ContinentsGuide {
+        AfricaScreen(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AmericaPreview() {
+    ContinentsGuide {
+        AmericaScreen(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun OceaniaPreview() {
+    ContinentsGuide {
+        OceaniaScreen(rememberNavController())
+    }
 }

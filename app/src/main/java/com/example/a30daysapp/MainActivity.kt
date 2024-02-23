@@ -93,7 +93,7 @@ sealed class Screen(val route: String) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun MainMenuPreview() {
     ContinentsGuide {
         ShowMainButtons(rememberNavController())
     }

@@ -1,10 +1,13 @@
 package com.example.a30daysapp.quizes
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.a30daysapp.ContinentQuiz
 import com.example.a30daysapp.R
 import com.example.a30daysapp.Screen
+import com.example.a30daysapp.ui.theme.ContinentsGuide
 
 @Composable
 fun EuropeQuiz(navController: NavController) {
@@ -114,4 +117,44 @@ fun OceaniaQuiz(navController: NavController) {
             R.string.answer_55
         )
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun EuropeQuizPreview() {
+    ContinentsGuide {
+        EuropeQuiz(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AsiaQuizPreview() {
+    ContinentsGuide {
+        AsiaQuiz(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AfricaQuizPreview() {
+    ContinentsGuide {
+        AfricaQuiz(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AmericaQuizPreview() {
+    ContinentsGuide {
+        AmericaQuiz(rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun OceaniaQuizPreview() {
+    ContinentsGuide {
+        OceaniaQuiz(rememberNavController())
+    }
 }

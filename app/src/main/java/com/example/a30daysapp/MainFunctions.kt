@@ -31,9 +31,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.a30daysapp.ui.theme.ContinentsGuide
 
 @Composable
 fun StyledButton(textId: Int, destination: Screen, navController: NavController) {
@@ -174,5 +177,13 @@ fun ResultScreen(
         Text("${Screen.Result.route} $correctCount/5")
         Spacer(modifier = Modifier.height(32.dp))
         StyledButton(R.string.main_menu, Screen.MainMenu, navController)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ResultPreview() {
+    ContinentsGuide {
+        ResultScreen(rememberNavController(), 5)
     }
 }
