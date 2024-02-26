@@ -19,7 +19,6 @@ import com.example.a30daysapp.R
 import com.example.a30daysapp.Screen
 import com.example.a30daysapp.StyledButton
 
-
 @Composable
 fun ShowMainButtons(navController: NavController) {
     Box(modifier = Modifier) {
