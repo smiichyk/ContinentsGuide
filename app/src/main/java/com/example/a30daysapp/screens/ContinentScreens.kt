@@ -14,6 +14,7 @@ fun EuropeScreen(navController: NavController) {
     ShowContinent(
         navController = navController,
         imageInt = R.drawable.europe,
+        titleId = R.string.europe_title,
         textId = R.string.europe_text,
         screen = Screen.EuropeQuiz
     )
@@ -24,6 +25,7 @@ fun AsiaScreen(navController: NavController) {
     ShowContinent(
         navController = navController,
         imageInt = R.drawable.asia,
+        titleId = R.string.asia_title,
         textId = R.string.asia_text,
         screen = Screen.AsiaQuiz
     )
@@ -34,6 +36,7 @@ fun AfricaScreen(navController: NavController) {
     ShowContinent(
         navController = navController,
         imageInt = R.drawable.africa,
+        titleId = R.string.africa_title,
         textId = R.string.africa_text,
         screen = Screen.AfricaQuiz
     )
@@ -44,6 +47,7 @@ fun AmericaScreen(navController: NavController) {
     ShowContinent(
         navController = navController,
         imageInt = R.drawable.america,
+        titleId = R.string.america_title,
         textId = R.string.america_text,
         screen = Screen.AmericaQuiz
     )
@@ -54,6 +58,7 @@ fun OceaniaScreen(navController: NavController) {
     ShowContinent(
         navController = navController,
         imageInt = R.drawable.oceania,
+        titleId = R.string.oceania_title,
         textId = R.string.oceania_text,
         screen = Screen.OceaniaQuiz
     )

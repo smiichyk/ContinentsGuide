@@ -11,6 +11,12 @@
     <string name="submit">SUBMIT</string>
     <string name="main_menu">MAIN MENU</string>
 
+    <string name="europe_title">CONTINENT OF EUROPE</string>
+    <string name="asia_title">CONTINENT OF ASIA</string>
+    <string name="africa_title">CONTINENT OF AFRICA</string>
+    <string name="america_title">CONTINENT OF AMERICA</string>
+    <string name="oceania_title">CONTINENT OF OCEANIA</string>
+
     <string name="europe_text">Europe is a continent in the Western Hemisphere, bordered by the Atlantic Ocean to the west, the Arctic Ocean to the north, and the Black, Caspian, and Mediterranean Seas to the south. It consists of 44 countries and boasts diverse climates, cultures, and histories. The European Union is a significant political and economic force, uniting 27 countries. Europe is a center of global history, art, science, and economics. Capitals such as Paris, Berlin, London, Rome, and Madrid are cultural and economic hubs of the world.</string>
     <string name="asia_text">Asia, the largest continent, spans the Eastern Hemisphere, bordered by the Pacific Ocean to the east, the Indian Ocean to the south, and the Arctic Ocean to the north. It encompasses diverse landscapes, from the vast deserts of the Middle East to the lush rain forests of Southeast Asia. With 49 countries, Asia boasts a rich tapestry of cultures, languages, and traditions. The continent is a hub of economic activity, with dynamic industries driving global commerce. Organizations like the Association of Southeast Asian Nations (ASEAN) foster regional cooperation. Major cities such as Tokyo, Beijing, Delhi, and Istanbul are vibrant centers of innovation and culture.</string>
     <string name="africa_text">Africa is a continent located primarily in the Eastern Hemisphere, bounded by the Atlantic Ocean to the west, the Indian Ocean to the east, and the Mediterranean Sea to the north. It comprises 54 countries and exhibits a rich diversity of cultures, landscapes, and histories. Africa\'s natural beauty encompasses deserts, savannas, forests, and mountains. Despite challenges, it holds immense potential for growth and development. The African Union serves as a pivotal organization for continental cooperation and integration. Major cities such as Cairo, Lagos, Johannesburg, Nairobi, and Addis Ababa are important centers for culture, commerce, and innovation on the continent.</string>

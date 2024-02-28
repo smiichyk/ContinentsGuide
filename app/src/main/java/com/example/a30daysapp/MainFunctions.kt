@@ -56,7 +56,7 @@ fun StyledButton(textId: Int, destination: Screen, navController: NavController)
 }
 
 @Composable
-fun ShowContinent(navController: NavController, imageInt: Int, textId: Int, screen: Screen) {
+fun ShowContinent(navController: NavController, imageInt: Int, titleId: Int, textId: Int, screen: Screen) {
     Column(
         modifier = Modifier
             .background(Color(225, 200, 150))
@@ -69,6 +69,10 @@ fun ShowContinent(navController: NavController, imageInt: Int, textId: Int, scre
                 .fillMaxWidth()
                 .padding(top = 16.dp, bottom = 30.dp)
         )
+        Text(
+         stringResource(titleId)
+        )
+        Spacer(modifier = Modifier.height(32.dp))
         Text(
             stringResource(textId),
         )
