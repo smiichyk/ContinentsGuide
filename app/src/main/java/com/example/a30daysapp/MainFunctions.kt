@@ -63,18 +63,33 @@ fun ShowContinent(navController: NavController, imageInt: Int, titleId: Int, tex
             .padding(30.dp)
     ) {
         Image(
-            painterResource(imageInt),
+            painter = painterResource(imageInt),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp, bottom = 30.dp)
         )
         Text(
-         stringResource(titleId)
+            text = stringResource(titleId),
+            style = MaterialTheme.typography.headlineSmall.copy(
+                color = Color(0xFF3A3A3A),
+                fontWeight = FontWeight.Bold
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
         )
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(16.dp))
         Text(
-            stringResource(textId),
+            text = stringResource(textId),
+            style = MaterialTheme.typography.bodyMedium.copy(
+                color = Color(0xFF3A3A3A),
+                fontWeight = FontWeight.Normal,
+                lineHeight = 24.sp
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
         )
         Row(
             horizontalArrangement = Arrangement.SpaceAround,
@@ -86,6 +101,7 @@ fun ShowContinent(navController: NavController, imageInt: Int, titleId: Int, tex
         }
     }
 }
+
 
 @SuppressLint("DiscouragedApi")
 @Composable
