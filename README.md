@@ -31,6 +31,18 @@ Each continent screen presents information about the selected region. The conten
 
 ![Continent Screens](screenshots/information_screen_1_8.jpeg)
 
+### Continent Quiz
+The Continent Quiz screen provides an interactive quiz for users to test their knowledge about the selected continent. Users are presented with a series of questions about the continent and fields for entering their answers. After submitting their answers, users receive a score based on the number of correct responses.
+
+The quiz screen includes:
+
+- Questions related to the continent.
+- Input fields for users to enter their answers.
+- A 'Submit' button to submit the answers and receive the score.
+- A 'Back' button to return to the Continent Screen.
+
+![Continent Quiz](screenshots/quiz_screen_1_7.jpeg)
+
 ## Visual Elements
 
 - **Styled Buttons**: The buttons on the Main Menu screen are styled with a unique color scheme and shape. They efficiently handle navigation to specific continent screens upon selection.
