@@ -29,7 +29,7 @@ The Main Menu screen features styled buttons, each representing a continent. The
 
 Each continent screen presents information about the selected region. The content is displayed in a readable and aesthetically pleasing manner. The screens include a prominent title, styled text describing the continent, a 'Back' button for easy navigation to the Main Menu, and a 'Quiz' button to test your knowledge about the continent.
 
-![Continent Screens](information_screen_1_8.jpeg)
+![Continent Screens](screenshots/information_screen_1_8.jpeg)
 
 ## Visual Elements
 
